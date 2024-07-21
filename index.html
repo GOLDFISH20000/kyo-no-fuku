@@ -1,28 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Teachable Machine Image Model</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <style>
+        #webcam-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        #label-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
+    <h1>Teachable Machine Image Model</h1>
+    <button type="button" onclick="init()">Start</button>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+    <script src="main.js"></script>
+</body>
+</html>
+>
+    <nav>
+        <ul>
+          <li class="aaa"><a href="#">うんこくん</a></li>
+          <li class="aaa"><a href="#">うんち</a></li>
+          <li class="aaa"><a href="#">大便</a></li>
+          <li class="aaa"><a href="#">排泄物</a></li>
+          <li class="aaa"><a href="#">POOP</a></li>
+        </ul>
+      </nav>
     <h2>今日の服</h2>
-    <h3>うがががががが</h3>
-    <button type="button" id="btn1" onclick="Aclick"></button>
+    <h3>うがががが</h3>
+    <h3>うんちっち</h3>
+    <h3>うんぴっぴ</h3>
+    <h3>ちんちん</h3>
+    
+    <h4>💩</h4>
+    <h4></h4>
+    <button type="button" onclick="Aclick(1)">UNKO</button>
+    <button type="button" onclick="location.href='closet.html'">クローゼット</button>
+    <button type="button" onclick="location.href='MyCoordinates.html'">Myコーデ作成</button>
+    <button type="button" onclick="location.href='osusume.html'">今日のおすすめ</button>
+    
+    
     
 
     <p id="x"></p>
 
-
+<!--
+    どうでもいい(？)雑学
+    https://teamtakahashi.github.io/kyo-no-fuku/  
+    ↑ のリンク踏めばこのhtmlファイルをブラウザで開けるよ
+-->
     <script>
+        
            
         function Aclick(y) {
-            x.textContent = 'なんでもいいんすか';
-
-
+            fetch("https://www.jma.go.jp/bosai/forecast/data/forecast/130000.json")
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(weather) {
+                    console.log(weather);
+                });
         }
 
 
     </script>
+    <script src="main.js"></script>
 </body>
 </html>
